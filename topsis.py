@@ -74,10 +74,8 @@ def topsis(input_data, weights, impacts):
     s_positive = np.linalg.norm(weighted_data - ideal_best, axis=1)
     s_negative =  np.linalg.norm(weighted_data - ideal_worst, axis=1)
     topsis_score = s_negative / (s_negative + s_positive)
-    sort_index=np.argsort(topsis_score)
-    desc_ind=sort_index[::-1]
-    rank=desc_ind+1
     input_data['Topsis Score'] = topsis_score
+    rank = input_data['Topsis Score'].rank(ascending=False).astype(int)
     input_data['Rank'] = rank.astype(int)
 
 if __name__ == "__main__":
@@ -104,6 +102,7 @@ if __name__ == "__main__":
         print("Output file: {} is written succesfully".format(output_file))
     except Exception as e:
         print(f"Error writing to the file : (e)")
+    print(input_data)
        
            
     
