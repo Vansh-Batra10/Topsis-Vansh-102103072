@@ -10,7 +10,7 @@ README = (HERE / "README.md").read_text()
 setup(
   name = 'Topsis-Vansh-102103072',          
   packages = ['topsis'],  
-  version = '0.1.1',     
+  version = '1.1.1',     
   license='MIT',    
   description = 'This is a library for implementing Topsis in command line',
   long_description=README,
@@ -18,7 +18,7 @@ setup(
   author = 'Vansh Batra',                   
   author_email = 'batravansh162@gmail.com',      
   url = 'https://github.com/Vansh-Batra10/Topsis-Vansh-102103072',   
-  download_url = 'https://github.com/Vansh-Batra10/Topsis-Vansh-102103072/archive/refs/tags/v0.1.1.tar.gz ',    
+  download_url = 'https://github.com/Vansh-Batra10/Topsis-Vansh-102103072/archive/refs/tags/v1.1.1.tar.gz ',    
   keywords = ['TOPSIS', 'Command Line'],   
   install_requires=[            
           'numpy',
@@ -42,7 +42,7 @@ setup(
   ],
   entry_points={
         "console_scripts": [
-            "topsis=102103072:__main__",
+            "topsis=topsis.__main__:main",
         ]
     },
 )

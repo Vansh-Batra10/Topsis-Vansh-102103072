@@ -78,32 +78,32 @@ def topsis(input_data, weights, impacts):
     rank = input_data['Topsis Score'].rank(ascending=False).astype(int)
     input_data['Rank'] = rank.astype(int)
 
-if __name__ == "__main__":
+def main():
     is_parameter_num_correct()
     check_arguments(sys.argv)
     input_data = sys.argv[1]
     input_data = check_and_load_data(input_data)
     len_column_check(input_data)
     is_numeric(input_data)
-    w=sys.argv[2].split(',')
+    w = sys.argv[2].split(',')
     impacts = sys.argv[3].split(',')
-    impact_weight_sep_check(sys.argv[3],sys.argv[2],len(input_data.columns)-1,len(input_data.columns)-1)
+    impact_weight_sep_check(sys.argv[3], sys.argv[2], len(input_data.columns) - 1, len(input_data.columns) - 1)
     impact_check(impacts)
-    
-    number_weight_impact_col_check(input_data,w,impacts)
-    weights = []
-    for w in w:
-    	weights.append(int(w))
-    
+
+    number_weight_impact_col_check(input_data, w, impacts)
+    weights = [int(w) for w in w]
+
     output_file = sys.argv[4]
     topsis(input_data, weights, impacts)
     try:
-        input_data.to_csv(output_file,index=False)
-        print("Output file: {} is written succesfully".format(output_file))
+        input_data.to_csv(output_file, index=False)
+        print("Output file: {} is written successfully".format(output_file))
     except Exception as e:
-        print(f"Error writing to the file : (e)")
+        print(f"Error writing to the file: {e}")
     print(input_data)
-       
+
+if __name__ == "__main__":
+    main()
            
     
     
