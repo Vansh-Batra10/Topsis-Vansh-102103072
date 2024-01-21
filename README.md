@@ -15,7 +15,7 @@ For running it you would provide input csv file, weights ,impacts and output csv
 
 ## Steps to use it
 In command line use the format :
-topsis <input csv file> <weights> <impact> <output file>
+topsis inputcsvfile weights impact output file
 1) the first argument should be a csv file containing input data
 2) The second argument should be weights 
 3) The third should be impacts

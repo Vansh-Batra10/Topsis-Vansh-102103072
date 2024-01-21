@@ -1,10 +1,20 @@
-from distutils.core import setup
+import pathlib
+from setuptools import setup
+
+# The directory containing this file
+HERE = pathlib.Path(__file__).parent
+
+# The text of the README file
+README = (HERE / "README.md").read_text()
+
 setup(
   name = 'Topsis-Vansh-102103072',          
   packages = ['Topsis-Vansh-102103072'],  
-  version = '1.0.0',     
+  version = '0.0.1',     
   license='MIT',    
-  description = 'This is a library for implementing Topsis in command line',  
+  description = 'This is a library for implementing Topsis in command line',
+  long_description=README,
+  long_description_content_type="text/markdown",  
   author = 'Vansh Batra',                   
   author_email = 'batravansh162@gmail.com',      
   url = 'https://github.com/Vansh-Batra10/Topsis-Vansh-102103072',   
@@ -12,8 +22,7 @@ setup(
   keywords = ['TOPSIS', 'Command Line'],   
   install_requires=[            
           'numpy',
-          'pandas',
-          'sys'
+          'pandas'
       ],
   classifiers=[
     'Development Status :: 3 - Alpha',     
@@ -31,4 +40,9 @@ setup(
     'Programming Language :: Python :: 3.11',
     'Programming Language :: Python :: 3.12',
   ],
+  entry_points={
+        "console_scripts": [
+            "topsis=102103072:__main__",
+        ]
+    },
 )
