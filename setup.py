@@ -42,7 +42,7 @@ setup(
   ],
   entry_points={
         "console_scripts": [
-            "topsis=topsis.102103072:__main__",
+            "topsis=102103072:__main__",
         ]
     },
 )
